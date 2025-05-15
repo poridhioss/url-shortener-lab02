@@ -26,4 +26,22 @@ BASE_URL=http://localhost:3000
 docker-compose up --build
 ```
 
+5. Test the project
+
+POST request to create a short URL  
+
+```bash
+curl -X POST http://localhost:3000/urls -H "Content-Type: application/json" -d '{"longUrl": "https://www.google.com"}' | jq
+```
+
+GET request to redirect to the long URL
+
+```bash
+curl -X GET http://localhost:3000/urls/<shortUrlId>
+```
+
+
+
+
+
 
